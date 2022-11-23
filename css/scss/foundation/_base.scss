@@ -1,0 +1,18 @@
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif, DIN alternate;
+  font-size: 18px;
+  background-color: #F4F7FA;
+  box-sizing: border-box;
+  overflow: hidden;
+  letter-spacing: 0.3rem;
+  line-height: 1.8em;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow: auto;
+}
+
+a:hover {
+opacity: 0.6;
+}

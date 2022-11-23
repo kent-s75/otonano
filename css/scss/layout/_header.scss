@@ -1,0 +1,261 @@
+@keyframes cta {
+  0% {
+      transform:rotate(0deg);
+  }
+  100% {
+      transform:rotate(-360deg);
+  }
+}
+.header {
+  z-index: 1100;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-family: DIN Alternate, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  letter-spacing: 0.2em;
+  // border-bottom: #000 solid 0.1px;
+  background-color: rgba(244, 247, 250, 0.4);
+  .cta {
+    position: fixed;
+    bottom: 4px;
+    right: 12px;
+    .namecard01 {
+      box-shadow: 2px 5px 15px rgba(125, 125, 125, 0.2);
+      transform: rotate(5deg);
+      bottom: 2px;
+      right: 2px;
+      position: relative;
+      z-index: 99999;
+    }
+  }
+  .cta::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    top: -57px;
+    left: -33px;
+    transform: rotate(-8deg);
+    background-image: url(../assets/namecard00.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: cta 10s infinite;
+  }
+  .post {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    height: 30px;
+  }
+  .header_inner {
+    display: flex;
+    justify-content: start;
+    width: 1400px;
+    margin: auto;
+
+    position: relative;
+
+    @include mq-down(md) {
+      #sp_head {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 1000;
+
+        .openbtn {
+          color: #4c3b74;
+          right: 0;
+          z-index: 1000;
+          position: relative;
+          /*ボタン内側の基点となるためrelativeを指定*/
+          cursor: pointer;
+          width: 50px;
+          height: 50px;
+          border-radius: 5px;
+        }
+
+        .openbtn span {
+          display: inline-block;
+          transition: all 0.4s;
+          position: absolute;
+          left: 14px;
+          height: 2px;
+          border-radius: 5px;
+          background: #4c3b74;
+          width: 45%;
+        }
+
+        .openbtn span:nth-of-type(1) {
+          top: 23px;
+        }
+
+        .openbtn span:nth-of-type(2) {
+          top: 30px;
+        }
+
+        .openbtn span:nth-of-type(1)::before {
+          content: "MORE";
+          position: absolute;
+          bottom: 10px;
+          left: -2px;
+          color: #4c3b74;
+          font-size: 10px;
+          text-transform: uppercase;
+        }
+
+        .openbtn.active span:nth-of-type(1) {
+          top: 19px;
+          left: 18px;
+          transform: translateY(2px) rotate(-35deg);
+          width: 48%;
+          background: #fff;
+        }
+
+        .openbtn.active span:nth-of-type(2) {
+          top: 26px;
+          left: 18px;
+          transform: translateY(-5px) rotate(35deg);
+          width: 48%;
+          background: #fff;
+        }
+
+        .openbtn.active span:nth-of-type(1)::before {
+          content: "ClOSE";
+          transform: translateY(0) rotate(35deg);
+          bottom: 10px;
+          left: 8px;
+          color: #fff;
+        }
+      }
+    }
+
+    .header_logo {
+      display: flex;
+      align-items: center;
+      margin-right: 40px;
+
+      @include mq-down(md) {
+        position: fixed;
+        top: 10px;
+        z-index: 800;
+      }
+    }
+
+    .navbar {
+      @include mq-up(md) {
+        display: inline-flex;
+      }
+
+      justify-content: flex-end;
+
+      .navbar_inner {
+        @include mq-up(md) {
+          display: inline-flex;
+        }
+
+        font-size: 16px;
+        margin-right: 14px;
+        align-items: center;
+
+        .navbar_btn {
+          border-right: none;
+          color: #4c3b74;
+          font-weight: bold;
+          padding: 22px 15px;
+
+          &:hover {
+            color: #4c3b74;
+          }
+        }
+      }
+    }
+
+    /*========= ナビゲーションのためのCSS ===============*/
+    @include mq-down(md) {
+      .navbar {
+        /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+        position: fixed;
+        z-index: 900;
+
+        /*ナビのスタート位置と形状*/
+        top: 0;
+        right: -120%;
+        width: 100%;
+        height: 100vh;
+
+        /*ナビの高さ*/
+        background: #999;
+
+        /*動き*/
+        transition: all 0.6s;
+
+        &.panelactive {
+          right: 0;
+
+          navbar-list {
+            /*ナビの数が増えた場合縦スクロール*/
+            position: fixed;
+            z-index: 900;
+            width: 100%;
+            height: 100vh;
+
+            /*表示する高さ*/
+            overflow: auto;
+          }
+        }
+
+        .navbar_inner {
+          padding-top: 50px;
+          background-color: rgba(83, 72, 108, 0.8);
+          height: 100%;
+          width: 100%;
+          z-index: 900;
+          position: absolute;
+          z-index: 900;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .navbar_btn {
+          margin: 10px;
+          background-color: #eaeaea;
+          border-radius: 4px;
+          list-style: none;
+          text-align: start;
+          display: flex;
+
+          &::after {
+            content: "";
+            display: inline-block;
+            background-image: url(../assets/right.png);
+            background-repeat: no-repeat;
+            width: 50px;
+            height: 5px;
+            margin: 30px -10px 0 auto;
+          }
+
+          .navbar_btn_link {
+            color: #333;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes upDown {
+  to {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+.upDown {
+  animation: upDown 1s infinite alternate;
+}

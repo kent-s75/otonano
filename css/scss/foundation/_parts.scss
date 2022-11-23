@@ -1,0 +1,54 @@
+
+.bold {
+    font-weight: bold;
+}
+
+.btn {
+    font-family: DIN alternate, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+    letter-spacing: 0.15em;
+    position: relative;
+    display: block;
+    margin-top: 70px;
+    color: #333;
+    text-decoration: none;
+    outline: none;
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    bottom:-2px;
+    left:0;
+    /*下線の形状*/
+    width: 100%;
+    height: 1px;
+    background:#333;
+    /*アニメーションの指定*/
+    transition: all .3s;
+}
+
+.btn::after{
+    content: '';
+    position: absolute;
+    bottom:4px;
+    right:-2px;
+    /*矢印の形状*/
+    width: 15px;
+    height:1px;
+    background:#333;
+    transform: rotate(50deg);
+    /*アニメーションの指定*/
+    transition: all .3s;
+}
+
+/*hoverした際の挙動*/
+.btn:hover {
+    opacity: 0.7;
+}
+.btn:hover::before{
+    left:20px;
+}
+.btn:hover::after{
+    right: 82px;
+}
+

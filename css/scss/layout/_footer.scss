@@ -1,0 +1,76 @@
+.footer_bg {
+  font-family:  DIN alternate, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  // background-image: url(../assets/footer.png);
+  background-color: #000;
+  width: 100vw;
+  // height: 600px;
+  // background-size: cover;
+  @include mq-down(md) {
+    justify-content: center;
+    text-align: center;
+  }
+  @include mq-up(md) {
+    display: flex;
+    justify-content: space-around;
+  }
+  align-items: flex-start;
+  padding: 10px 50px;
+  color: white;
+
+  .footer_main_section {
+    padding: 0 20px;
+    @include mq-down(md) {
+      margin-top: 100px;
+    }
+
+    .footer_main_text {
+      margin: 30px 0;
+      font-size: 24px;
+    }
+  }
+
+  .front_blog_wrapper {
+    @include mq-down(md) {
+      display: none;
+    }
+    margin: 0 20px;
+    flex-wrap: wrap;
+    .front_blog_title {
+      display: flex;
+      flex-direction: column;
+      font-size: 18px;
+      padding: 20px 0;
+
+      &::after {
+        content: "";
+        border-bottom: solid 1px white;
+        display: inline-block;
+        width: 350px;
+        padding-top: 15px;
+      }
+    }
+    .front_blog_inner {
+      padding: 10px 0;
+      max-width: 350px;
+
+      .front_blog_list {
+        display: inline-flex;
+        width: 250px;
+        padding: 10px 0;
+        // vertical-align: baseline;
+      }
+    }
+    .front_category_inner {
+      padding: 10px 0;
+      width: 450px;
+
+      .front_category_list {
+        display: inline-flex;
+        width: 200px;
+        padding: 10px 0;
+        white-space: nowrap;
+        // vertical-align: baseline;
+      }
+    }
+  }
+}

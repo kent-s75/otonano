@@ -1,0 +1,101 @@
+.contact_section {
+  padding: 100px 0;
+
+  .front_contact_title {
+    width: 450px;
+
+    @include mq-down(md) {
+      width: 332px;
+    }
+
+    margin: 0 auto;
+
+    .front_title_team {
+      width: 450px;
+
+      @include mq-down(md) {
+        width: 332px;
+      }
+    }
+
+    .title_description {
+      margin-top: 10px;
+      color: #868686;
+    }
+  }
+
+  .title_bottom_text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 39px;
+
+    @include mq-down(md) {
+      font-size: 21px;
+    }
+
+    font-weight: bold;
+  }
+
+  .CF7_table {
+    width: 634px;
+    @include mq-down(md) {
+      max-width: 320px;
+    }
+    margin: 0 auto;
+
+    .contact_box {
+      margin: 30px auto;
+      border: solid 1px #868686;
+      border-radius: 4px;
+      width: 634px;
+      @include mq-down(md) {
+        max-width: 320px;
+      }
+    }
+
+    .wpcf7-form-control {
+      width: 634px;
+      @include mq-down(md) {
+        max-width: 320px;
+      }
+    }
+
+    .wpcf7-text {
+      padding: 20px;
+      font-size: 14px;
+      &::placeholder {
+        z-index: 100;
+        color: #b0b0b0;
+      }
+      font-weight: bold;
+    }
+    .wpcf7-textarea {
+      padding: 20px;
+      font-size: 14px;
+      &::placeholder {
+        z-index: 100;
+        color: #b0b0b0;
+      }
+      font-weight: bold;
+    }
+  }
+
+  .CF7_btn {
+    width: 634px;
+    @include mq-down(md) {
+      max-width: 320px;
+    }
+    height: 70px;
+    background-color: #d5d088;
+    border-radius: 4px;
+    color: white;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .wpcf7-spinner {
+      display: none;
+    }
+  }
+}
